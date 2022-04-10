@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import GoogleMap from '../src/components/Map/GoogleMap';
-import { LoadingContainer } from '../src/components/Loading';
-import { Searching } from '../src/components/Searching';
-import { Listening } from '../src/components/Listening';
-import { AppState } from '../src/redux/store';
+import LoadingContainer from '../src/components/Loading';
+import Searching from '../src/components/Searching';
+import Listening from '../src/components/Listening';
+import { AppState } from '../redux/store';
 
 function Map () {
     const ui = useSelector((state: AppState) => state.ui);

@@ -56,7 +56,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export const Autocomplete = () => {
+function Autocomplete () {
     const dispatch = useDispatch();
     const mapState = useSelector((state: AppState) => state.map);
 
@@ -103,4 +103,6 @@ export const Autocomplete = () => {
         </AppBar>
       </>
     )
-};
+}
+
+export default Autocomplete;
