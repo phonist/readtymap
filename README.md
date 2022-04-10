@@ -1,45 +1,123 @@
-# Next.js with TypeScript example
+<div id="top"></div>
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/phonist/readtymap">
+    <img src="https://github.com/phonist/readtymap/blob/master/public/favicon.ico?raw=true" alt="Logo" width="80" height="80">
+  </a>
 
-## How to use
+<h3 align="center">ReadtyMap</h3>
 
-Download the example [or clone the repo](https://github.com/mui/material-ui):
+  <p align="center">
+    ReadtyMap is a tool that can search for a location by voice, as well as by typing and searching.
+    Deepgram and Google Maps are the technologies being used here.
+  </p>
+</div>
 
-<!-- #default-branch-switch -->
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-```sh
-curl https://codeload.github.com/mui/material-ui/tar.gz/master | tar -xz --strip=2  material-ui-master/examples/nextjs-with-typescript
-cd nextjs-with-typescript
+![ReadtyMap](https://github.com/phonist/readtymap/blob/master/public/assets/readtymap.png?raw=true)
+
+Sometimes people are just lazy when it comes to typing.
+People frequently use Google Maps to find the location in many everyday situations.
+Despite the fact that there are many similar apps available, it is still worthwhile to create a simple one.
+
+### Build With
+* [Deepgram](https://deepgram.com/)
+* [Google Maps](https://developers.google.com/maps/documentation/javascript/get-api-key)
+* [React](https://reactjs.org/)
+* [NextJs](https://nextjs.org/docs/basic-features/typescript)
+* [Typescript](https://www.typescriptlang.org/)
+* [Redux](https://redux.js.org/)
+* [Redux-thunk](https://github.com/reduxjs/redux-thunk)
+* [Material-UI](https://mui.com/)
+
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+# Use Voice
+
+# Development
+The majority of the time, development takes place in `src/components/Map/`, where the keys feature is used.
+
+The deepgram.ts in `pages/api/deepgram.ts` is used for the speech to text feature, which is called by function in `src/components/Map/Autocomplete.tsx`.
+
+Meanwhile, the Google Maps API is used for the map feature, which is called by function in `src/components/Map/GoogleMap.tsx`.
+
+The project structure are depicts below. 
 ```
-
-Install it and run:
-
-```sh
-npm install
-npm run dev
+pages/
+|-- api/
+  |-- deepgram.ts
+|-- index.tsx
+|-- _app.tsx
+|-- Map.tsx
+redux/
+|-- reducers/
+|-- actions/
+|-- thunks/
+|-- types/
+      |-- interfaces/
+|-- reducers.ts
+|-- store.ts
+src/
+|-- components/
+  |-- Map/
+    |-- Autocomplete.tsx
+    |-- GoogleMap.tsx
+    |-- Pointer.tsx
+|-- Listening.tsx
+|-- Loading.tsx
+|-- Searching.tsx
 ```
+* Deepgram.ts is Deepgram's API interface. 
+* All UI components are stored in the `src` folder. 
+* All redux logic is stored in the `redux` folder. 
+* All typescript interfaces are kept in the folders `types` and `types/interfaces.`
 
-or:
 
-<!-- #default-branch-switch -->
+### Prerequisites
+* Node - 16.2.0
+* Yarn - 1.22.17
+* Deepgram acount
+* Google Maps API key
 
-[![Edit on StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/mui/material-ui/tree/master/examples/nextjs-with-typescript)
 
-[![Edit on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/mui/material-ui/tree/master/examples/nextjs-with-typescript)
+### Installation
+1. git clone https://github.com/phonist/readtymap
+2. cd readtymap
+3. yarn dev
+4. navigate to localhost:3000 and start your development
 
-## The idea behind the example
+<!-- CONTRIBUTING -->
+## Contributing
 
-The project uses [Next.js](https://github.com/vercel/next.js), which is a framework for server-rendered React apps.
-It includes `@mui/material` and its peer dependencies, including `emotion`, the default style engine in MUI v5. If you prefer, you can [use styled-components instead](https://mui.com/material-ui/guides/interoperability/#styled-components).
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-## The link component
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement" or "bug".
+Don't forget to give the project a star! Thanks again!
 
-Next.js has [a custom Link component](https://nextjs.org/docs/api-reference/next/link).
-The example folder provides adapters for usage with MUI.
-More information [in the documentation](https://mui.com/material-ui/guides/routing/#next-js).
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/<featureName>`)
+3. Commit your Changes (`git commit -m 'add <featurename>'`)
+4. Push to the Branch (`git push origin feature/<featureName>`)
+5. Open a Pull Request
 
-## What's next?
 
-<!-- #default-branch-switch -->
+<!-- LICENSE -->
+## License
 
-You now have a working example project.
-You can head back to the documentation, continuing browsing it from the [templates](https://mui.com/material-ui/getting-started/templates/) section.
+Distributed under the MIT License. See `LICENSE.txt` for more information.
+
+
+
+
+<!-- CONTACT -->
+## Contact
+
+
+Adrian Chong - [@twitter_handle](https://twitter.com/AdrianC50883820) - rujyi94@hotmail.com
+
+Project Link: [https://github.com/phonist/readtymap](https://github.com/phonist/readtymap)
