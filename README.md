@@ -37,9 +37,15 @@ Despite the fact that there are many similar apps available, it is still worthwh
 <!-- GETTING STARTED -->
 ## Getting Started
 
-# Use Voice
+### Use Voice
+![Search Bar](https://github.com/phonist/readtymap/blob/master/public/assets/searchbar.png?raw=true)
 
-# Development
+1. Click on the microphone icon.
+2. Start speaking when page showing 'Listening'.
+3. Stop speaking when page shows 'Searching'.
+4. ReadtyMap will show the location.
+
+### Development
 The majority of the time, development takes place in `src/components/Map/`, where the keys feature is used.
 
 The deepgram.ts in `pages/api/deepgram.ts` is used for the speech to text feature, which is called by function in `src/components/Map/Autocomplete.tsx`.
@@ -88,6 +94,11 @@ src/
 ### Installation
 1. git clone https://github.com/phonist/readtymap
 2. cd readtymap
+3. create .env file at root directory and assign value to these keys:
+```
+NEXT_PUBLIC_GOOGLE_API_KEY_MAPS=<your google maps api key>
+NEXT_PUBLIC_DEEPGRAM_API_KEY=<your deepgram api key>
+```
 3. yarn dev
 4. navigate to localhost:3000 and start your development
 
