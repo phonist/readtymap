@@ -80,28 +80,26 @@ function Autocomplete () {
     }
 
     return (
-      <>
-        <AppBar position="static">
-          <Toolbar>
-            <Search
-              onClick={onSearchClick}
-            >
-              <SearchIconWrapper>
-                <SearchIcon />
-              </SearchIconWrapper>
-              <StyledInputBase
-                onKeyDown={onKeyDown}
-                placeholder='Enter a location'
-                inputProps={{ 'aria-label': 'search' }}
-              />
-              <IconButton onClick={onVoiceSearchClick} color="primary" aria-label="voice search" component="span">
-                <MicIcon />
-              </IconButton>
-            </Search>
+      <AppBar position='static' elevation={0}>
+        <Toolbar>
+          <Search
+            onClick={onSearchClick}
+          >
+            <SearchIconWrapper>
+              <SearchIcon />
+            </SearchIconWrapper>
+            <StyledInputBase
+              onKeyDown={onKeyDown}
+              placeholder='Enter a location'
+              inputProps={{ 'aria-label': 'search' }}
+            />
+            <IconButton onClick={onVoiceSearchClick} color="primary" aria-label="voice search" component="span">
+              <MicIcon />
+            </IconButton>
+          </Search>
 
-          </Toolbar>
-        </AppBar>
-      </>
+        </Toolbar>
+      </AppBar>
     )
 }
 

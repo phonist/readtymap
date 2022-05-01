@@ -7,16 +7,11 @@ import { attemptMarkerClick, attemptSetMarker, attemptSetLocation } from '../../
 import Autocomplete from './Autocomplete';  
 import LoadingContainer from '../Loading';
 
-const style = {
-  width: '114.5vh',
-  height: '80vh',
-}
-
 function GoogleMap (props:any) {
   const dispatch = useDispatch();
   const mapState = useSelector((state: AppState) => state.map);
   const ui = useSelector((state: AppState) => state.ui);
-  
+
   useEffect(() => {
     if(!mapState.mapApiLoaded && !ui.listening && !ui.searching) {
       setCurrentLocation();
@@ -41,39 +36,35 @@ function GoogleMap (props:any) {
   }
 
   return (
-      <>
-        <Autocomplete />
-        <Map
-            item
-            xs = { 12 }
-            style = { style }
-            google = { props.google }
-            onClick = { onMapClick }
-            zoom = { 14 }
-            initialCenter = {{ lat: mapState.lat, lng: mapState.lng}}
-            center = {{ lat: mapState.lat, lng: mapState.lng}}
+      <Map
+          item
+          xs = { 12 }
+          google = { props.google }
+          onClick = { onMapClick }
+          zoom = { 14 }
+          initialCenter = {{ lat: mapState.lat, lng: mapState.lng}}
+          center = {{ lat: mapState.lat, lng: mapState.lng}}
+        >
+          <Marker
+            onClick = { onMarkerClick }
+            title = { mapState.address }
+            position = {{ lat: mapState.lat, lng: mapState.lng }}
+            name = { mapState.address }
+          />
+          <InfoWindow
+            marker = { mapState.activeMarker }
+            visible = { mapState.showingInfoWindow }
           >
-            <Marker
-              onClick = { onMarkerClick }
-              title = { mapState.address }
-              position = {{ lat: mapState.lat, lng: mapState.lng }}
-              name = { mapState.address }
-            />
-            <InfoWindow
-              marker = { mapState.activeMarker }
-              visible = { mapState.showingInfoWindow }
-            >
-              <Paper>
-                <Typography
-                  variant = 'headline'
-                  component = 'h4'
-                >
-                  { mapState.address }
-                </Typography>
-              </Paper>
-            </InfoWindow>
-        </Map>      
-      </>
+            <Paper>
+              <Typography
+                variant = 'headline'
+                component = 'h4'
+              >
+                { mapState.address }
+              </Typography>
+            </Paper>
+          </InfoWindow>
+      </Map> 
     )
   ;
   
