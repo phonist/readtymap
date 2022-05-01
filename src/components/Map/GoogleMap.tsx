@@ -4,7 +4,7 @@ import { Paper, Typography } from '@mui/material';
 import { AppState } from '../../redux/store';
 import { useSelector, useDispatch } from 'react-redux';
 import { attemptMarkerClick, attemptSetMarker, attemptSetLocation } from '../../../redux/thunks/map';
-import Autocomplete from './Autocomplete';  
+import Autocomplete from './AutocompleteGoogleMap';  
 import LoadingContainer from '../Loading';
 
 function GoogleMap (props:any) {

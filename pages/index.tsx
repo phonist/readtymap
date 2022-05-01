@@ -8,15 +8,14 @@ import Card from '@mui/material/Card';
 import Map from './Map';
 import { CssBaseline } from '@mui/material';
 import GlobalStyles from '@mui/material/GlobalStyles';
-import Autocomplete from '../src/components/Map/Autocomplete';
+import NavigationBar from '../src/components/Map/NavigationBar';
 
 const Home: NextPage = () => {
   return (
     <React.Fragment>
       <GlobalStyles styles={{ body: { margin: 0 }, ul: { margin: 0, padding: 0, listStyle: 'none' } }} />
-      <Autocomplete />
-      
-      <Grid container xs spacing={0} direction={"row"}>
+      <NavigationBar />
+      <Grid container spacing={0} direction={"row"}>
         <Grid item xs={12} lg={12} xl={12} style={{position: 'relative', height: '93.5vh'}}>
           <Map />
         </Grid>
